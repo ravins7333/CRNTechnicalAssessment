@@ -1,8 +1,40 @@
 [
   {
-    "ContainingType": "CRN.API.Controllers.ProductsController",
-    "Method": "GetAll",
-    "RelativePath": "api/Products",
+    "ContainingType": "CRN.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CRN.Application.DTOs.LoginRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CRN.API.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "api/Auth/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CRN.Domain.Entities.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CRN.API.Controllers.AuthController",
+    "Method": "Profile",
+    "RelativePath": "api/Auth/profile",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,9 +42,57 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CRN.API.Controllers.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/Auth/refresh-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CRN.Domain.Entities.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CRN.API.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CRN.Application.DTOs.RegisterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CRN.API.Controllers.ProductsController",
+    "Method": "GetAll",
+    "RelativePath": "api/v{version}/Products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CRN.API.Controllers.ProductsController",
     "Method": "Create",
-    "RelativePath": "api/Products",
+    "RelativePath": "api/v{version}/Products",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -21,6 +101,11 @@
         "Name": "dto",
         "Type": "CRN.Application.DTOs.ProductCreateDto",
         "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -28,7 +113,7 @@
   {
     "ContainingType": "CRN.API.Controllers.ProductsController",
     "Method": "GetById",
-    "RelativePath": "api/Products/{id}",
+    "RelativePath": "api/v{version}/Products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -37,6 +122,11 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -44,7 +134,7 @@
   {
     "ContainingType": "CRN.API.Controllers.ProductsController",
     "Method": "Update",
-    "RelativePath": "api/Products/{id}",
+    "RelativePath": "api/v{version}/Products/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -58,6 +148,11 @@
         "Name": "dto",
         "Type": "CRN.Application.DTOs.ProductUpdateDto",
         "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -65,7 +160,7 @@
   {
     "ContainingType": "CRN.API.Controllers.ProductsController",
     "Method": "Delete",
-    "RelativePath": "api/Products/{id}",
+    "RelativePath": "api/v{version}/Products/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -73,6 +168,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
         "IsRequired": true
       }
     ],

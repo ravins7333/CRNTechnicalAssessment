@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<IsPackable>false</IsPackable>
+		<IsTestProject>true</IsTestProject>
+
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="coverlet.collector" Version="6.0.0" />
+		<PackageReference Include="FluentAssertions" Version="8.10.0" />
+
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.19" />
+
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+
+		<PackageReference Include="xunit" Version="2.5.3" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\CRN.API\CRN.API.csproj" />
+		<ProjectReference Include="..\CRN.Application\CRN.Application.csproj" />
+		<ProjectReference Include="..\CRN.Domain\CRN.Domain.csproj" />
+		<ProjectReference Include="..\CRN.Infrastructure\CRN.Infrastructure.csproj" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<Using Include="Xunit" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<None Update="test.runsettings">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+
+</Project>

@@ -12,8 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\" />
-    <Folder Include="Validators\" />
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.19.0" />
   </ItemGroup>
 
 </Project>

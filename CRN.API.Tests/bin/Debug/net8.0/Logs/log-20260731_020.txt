@@ -1,0 +1,13 @@
+2026-07-31 02:49:13.684 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-31 02:49:13.729 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost/api/v1/products/1 - null null
+2026-07-31 02:49:13.730 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-31 02:49:13.731 +05:30 [INF] Executing endpoint 'CRN.API.Controllers.ProductsController.Delete (CRN.API)'
+2026-07-31 02:49:13.736 +05:30 [INF] Route matched with {action = "Delete", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller CRN.API.Controllers.ProductsController (CRN.API).
+2026-07-31 02:49:13.763 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedBy], [p].[CreatedOn], [p].[ModifiedBy], [p].[ModifiedOn], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__id_0
+2026-07-31 02:49:13.766 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2026-07-31 02:49:13.790 +05:30 [INF] Executed action CRN.API.Controllers.ProductsController.Delete (CRN.API) in 53.8559ms
+2026-07-31 02:49:13.791 +05:30 [INF] Executed endpoint 'CRN.API.Controllers.ProductsController.Delete (CRN.API)'
+2026-07-31 02:49:13.791 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost/api/v1/products/1 - 404 null application/problem+json; charset=utf-8 62.0421ms

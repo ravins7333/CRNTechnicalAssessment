@@ -1,0 +1,30 @@
+2026-07-31 02:21:44.675 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-31 02:21:44.675 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-31 02:21:44.707 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost/api/auth/login - application/json; charset=utf-8 52
+2026-07-31 02:21:44.707 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost/api/v1/products - null null
+2026-07-31 02:21:44.712 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-31 02:21:44.713 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-31 02:21:44.714 +05:30 [INF] Executing endpoint 'CRN.API.Controllers.ProductsController.GetAll (CRN.API)'
+2026-07-31 02:21:44.714 +05:30 [INF] Executing endpoint 'CRN.API.Controllers.AuthController.Login (CRN.API)'
+2026-07-31 02:21:44.718 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(CRN.Application.DTOs.LoginRequestDto) on controller CRN.API.Controllers.AuthController (CRN.API).
+2026-07-31 02:21:44.721 +05:30 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller CRN.API.Controllers.ProductsController (CRN.API).
+2026-07-31 02:21:45.041 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[Email], [u].[PasswordHash], [u].[UserName]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @__ToLower_0
+2026-07-31 02:21:45.042 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedOn], [p].[ModifiedBy], [p].[ModifiedOn], [p].[ProductName]
+FROM [Products] AS [p]
+2026-07-31 02:21:45.052 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[CRN.Domain.Entities.Product, CRN.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CRN.Application.DTOs.ProductResponseDto, CRN.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-31 02:21:45.055 +05:30 [INF] Executed action CRN.API.Controllers.ProductsController.GetAll (CRN.API) in 333.6145ms
+2026-07-31 02:21:45.055 +05:30 [INF] Executed endpoint 'CRN.API.Controllers.ProductsController.GetAll (CRN.API)'
+2026-07-31 02:21:45.055 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost/api/v1/products - 200 null application/json; charset=utf-8 348.0879ms
+2026-07-31 02:21:45.931 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedDate], [ExpiryDate], [IsRevoked], [Token], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-07-31 02:21:45.937 +05:30 [INF] Executed action CRN.API.Controllers.AuthController.Login (CRN.API) in 1218.4374ms
+2026-07-31 02:21:45.937 +05:30 [INF] Executed endpoint 'CRN.API.Controllers.AuthController.Login (CRN.API)'
+2026-07-31 02:21:45.937 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost/api/auth/login - 200 null application/json; charset=utf-8 1230.0561ms
